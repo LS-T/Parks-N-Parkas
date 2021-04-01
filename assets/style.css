@@ -1,3 +1,8 @@
+.root {
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .navbar-light .navbar-brand {
     color: white;
     font-size: 50px;
@@ -6,4 +11,25 @@
 
 .row {
     margin: auto;
+}
+
+.btn {
+    background-color: seagreen;
+    border-color: seagreen;
+    display: flex;
+
+    margin-bottom: 15px;
+    justify-content: center;
+    
+}
+
+.search-text {
+    padding-left: 3%;
+    margin-top: 25px;
+    display: flex;
+}
+
+.saved-park {
+    padding-left: 16px;
+    display: flex;
 }
