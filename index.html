@@ -11,42 +11,45 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>OurApp</title>
+    <title>Parks&Parkas</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">OurAppName</a>
+        
+        <a class="navbar-brand" href="#">Parks&Parkas</a>
       </div>
     </nav>
 
+    <div class="col-sm-12">
+    
+
     <main class="container-fluid">
         <div class="row">
-          <div class="col-sm-6">
-            <form class="row" id="search-form">
-              <h4>Search for a National Park :</h4>
+          <div class="col-sm-6 offset-sm-3">
+            <form class="row" id="add-to-list">
+              <div class="search-text">
+              <h4> Search for a National Park :</h4>
+            </div>
   
               <div class="form-group col-9">
-                <input type="text" class="form-control" id="search-city" />
+                <input type="text" class="form-control" id="list-item" />
               </div>
 
-              <button type="submit" class="btn btn-primary col-3">Search</button>
+              <button type="submit" class="btn btn-primary col-2">Search</button>
           </form>
-          <div class="card" style="width: 17rem">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Saved Park</li>
-              <li class="list-group-item">Saved Park</li>
-              <li class="list-group-item">Saved Park</li>
+
+          <div class="saved-park">
+          <div class="card" style="width: 31rem">
+            <ul class="list-group list-group-flush" id="savedPark">
             </ul>
           </div>
         </div>
-
-
-
-
+      </div>
 
 
 <body>
     
 </body>
+<script src="assets/script.js"></script>
 </html>
