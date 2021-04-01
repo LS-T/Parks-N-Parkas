@@ -1,0 +1,18 @@
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 50px;
+    margin: auto;
+}
+
+.row {
+    margin: auto;
+}
+
+#jumbotron-bg {
+    background-image: url("./images/navbar-bg.jpg");
+    color: white;
+    font-size: 60px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
