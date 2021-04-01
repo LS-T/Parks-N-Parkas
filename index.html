@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src=".style.css">
     <title>Project-1</title>
 </head>
 <body>
     <header>
         <h1>Hello World!</h1>
-        <p>Weather:<span id="weather"></span> </p>
+        <p>Temperature:<span id="temp"></span> </p>
+        <br>
+        <p>Humidity:<span id="humid"></span></p>
+        <br>
+        <p>Day Temperature:<span id="dayTemp"><img id="wicon" src="" alt="weather icon"></span></p>
+        <br>
+        <p>Night Temperature:<span id="nightTemp"></span></p>
     </header>
+    <main class=".sevenDayForecast">
+        <div class="7day">
+
+
+        </div>
+
+
+    </main>
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./weatherapi.js"></script>
 </body>
 </html>
