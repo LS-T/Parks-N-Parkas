@@ -1,35 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src=".style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Project-1</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Hello World!</h1>
-        <p>Temperature:<span id="temp"></span> </p>
-        <br>
-        <p>Humidity:<span id="humid"></span></p>
-        <br>
-        <p>Day Temperature:<span id="dayTemp"><img id="wicon" src="" alt="weather icon"></span></p>
-        <br>
-        <p>Night Temperature:<span id="nightTemp"></span></p>
+      <h1>Hello World!</h1>
+      <p>Temperature:<span id="temp"></span></p>
+      <br />
+      <p>Humidity:<span id="humid"></span></p>
+      <br />
+      <p>Day Temperature:<span id="dayTemp"></span></p>
+      <br />
+      <p>Night Temperature:<span id="nightTemp"></span></p>
     </header>
-    <main class=".sevenDayForecast">
-        <div class="7day">
-
-
-        </div>
-
-
+    <main class=".sevenDayForecast container-fluid d-flex align-items-stretch">
+        <section class="test">
+          <div class="card-deck">
+            <div class="card">
+              <span id="icon1"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/2/2021</h5>
+                <p class="card-text"><span id="daytemp1"></span></p>
+                <p class="card-text"><span id="nighttemp1"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon2"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/3/2021</h5>
+                <p class="card-text"><span id="daytemp2"></span></p>
+                <p class="card-text"><span id="nighttemp2"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon3"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/4/2021</h5>
+                <p class="card-text"><span id="daytemp3"></span></p>
+                <p class="card-text"><span id="nighttemp3"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon4"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/5/2021</h5>
+                <p class="card-text"><span id="daytemp4"></span></p>
+                <p class="card-text"><span id="nighttemp4"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon5"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/6/2021</h5>
+                <p class="card-text"><span id="daytemp5"></span></p>
+                <p class="card-text"><span id="nighttemp5"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon6"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/7/2021</h5>
+                <p class="card-text"><span id="daytemp6"></span></p>
+                <p class="card-text"><span id="nighttemp6"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <span id="icon7"></span>
+              <div class="card-body">
+                <h5 class="card-title">4/8/2021</h5>
+                <p class="card-text"><span id="daytemp7"></span></p>
+                <p class="card-text"><span id="nighttemp7"></span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+        </section>
+      
     </main>
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./weatherapi.js"></script>
-</body>
+  </body>
 </html>
