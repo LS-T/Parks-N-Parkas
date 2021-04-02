@@ -24,6 +24,7 @@ function getWeatherApi () {
             humid.text(data.current.humidity);
             $("#dayTemp").text(data.daily[0].temp.day);
             $("#nightTemp").text(data.daily[0].temp.night);
+            
             var iconCode1 = data.daily[1].weather[0].icon;
             var iconCode2 = data.daily[2].weather[0].icon;
             var iconCode3 = data.daily[3].weather[0].icon;
@@ -41,6 +42,7 @@ function getWeatherApi () {
             var iconUrl6 = "http://openweathermap.org/img/wn/"+ iconCode6 + "@2x.png";
             var iconUrl7 = "http://openweathermap.org/img/wn/"+ iconCode7 + "@2x.png";
 
+            
             $("#daytemp1").text(data.daily[1].temp.day) + " F° ";
             $("#nighttemp1").text(data.daily[1].temp.night) + " °F ";
             var img = $('<img id="wicon" alt="weather icon" width="75px">').attr('src',iconUrl1);
@@ -77,14 +79,34 @@ function getWeatherApi () {
             img6.attr("src", iconUrl6);
             $("#icon6").append(img6);
 
-            $("#daytemp7").text(data.daily[4].temp.day) + " F° ";
-            $("#nighttemp7").text(data.daily[4].temp.night) + " °F ";
+            
+            $("#daytemp7").text(data.daily[7].temp.day) + " F° ";
+            $("#nighttemp7").text(data.daily[7].temp.night) + " °F ";
             var img7 = $('<img id="wicon2" alt="weather icon" width="75px">')
             img7.attr("src", iconUrl7);
             $("#icon7").append(img7);
 
+            
+            // var day1Condition =data.daily[7].weather[0].main;
+           var day1Condition = "Rain";
+        
+            console.log(day1Condition);
+            if (day1Condition === "Clear" || "Clouds"){
+                console.log("WRONG");
 
+            } else  {
+                console.log("FINALLY");
+            } 
+           
+            
+                
+                
 
+            
+
+            
+
+            
 
             
             
