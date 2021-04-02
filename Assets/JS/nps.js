@@ -1,6 +1,7 @@
+
 var myAPIKey = "I6NhqnfsMGelsoDKumjcdPKekZCymyBFUdDEPrAC";
 
-function getFullName() {
+function getFullName(park) {
   var npsUrl="https://developer.nps.gov/api/v1/parks?fullName?parkCode?states?=acad&api_key=" + myAPIKey;
   
   console.log(npsUrl);
@@ -21,8 +22,11 @@ function getFullName() {
     console.log(dataArray[i].addresses[0].city);
     console.log(dataArray[i].images[0].url);
 
-  }
-    })
-  }
-  getFullName();
- 
+
+$("#park-name").text(dataArray[i].name);
+$("#park-code").text(dataArray[i].parkCode);
+
+$("#submit").on("click", function(){
+var parkToSearch = $("#list-item").val();
+getFullName(parkToSearch);})}
+})}
