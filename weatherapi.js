@@ -87,22 +87,100 @@ function getWeatherApi () {
             $("#icon7").append(img7);
 
             
-            // var day1Condition =data.daily[7].weather[0].main;
-           var day1Condition = "Rain";
+            var day1Condition =data.daily[1].weather[0].main;
+            var day2Condition =data.daily[2].weather[0].main;
+            var day3Condition =data.daily[3].weather[0].main;
+            var day4Condition =data.daily[4].weather[0].main;
+            var day5Condition =data.daily[5].weather[0].main;
+            var day6Condition =data.daily[6].weather[0].main;
+            var day7Condition =data.daily[7].weather[0].main;
+
         
             console.log(day1Condition);
-            if (day1Condition === "Clear" || "Clouds"){
-                console.log("WRONG");
-
-            } else  {
-                console.log("FINALLY");
-            } 
-           
-            
+            if (day1Condition === "Clear" || day1Condition === "Clouds"){
                 
-                
+                $(".border1").addClass("border-success");
+                console.log("success")}
+              else if (day1Condition === "Thunderstorm" || day1Condition === "Rain") {
+                console.log("red");
+                $(".border1").addClass("border-danger")}
+               else if (day1Condition === "Drizzle" || day1Condition === "Fog" || day1Condition ==="Snow"){
+                console.log("yellow");
+                $(".border1").addClass("border-warning");
 
-            
+            }
+            if (day2Condition === "Clear" || day2Condition === "Clouds"){
+                
+                $(".border2").addClass("border-success");
+                console.log("success")}
+              else if (day2Condition === "Thunderstorm" || day2Condition === "Rain") {
+                console.log("red");
+                $(".border2").addClass("border-danger")}
+               else if (day2Condition === "Drizzle" || day2Condition === "Fog" || day2Condition ==="Snow"){
+                console.log("yellow");
+                $(".border2").addClass("border-warning");
+
+            }
+            if (day3Condition === "Clear" || day3Condition === "Clouds"){
+                
+                $(".border3").addClass("border-success");
+                console.log("success")}
+              else if (day3Condition === "Thunderstorm" || day3Condition === "Rain") {
+                console.log("red");
+                $(".border3").addClass("border-danger")}
+               else if (day3Condition === "Drizzle" || day3Condition === "Fog" || day3Condition ==="Snow"){
+                console.log("yellow");
+                $(".border3").addClass("border-warning");
+
+            }
+            if (day4Condition === "Clear" || day4Condition === "Clouds"){
+                
+                $(".border4").addClass("border-success");
+                console.log("success")}
+              else if (day4Condition === "Thunderstorm" || day4Condition === "Rain") {
+                console.log("red");
+                $(".border4").addClass("border-danger")}
+               else if (day1Condition === "Drizzle" || day4Condition === "Fog" || day4Condition ==="Snow"){
+                console.log("yellow");
+                $(".border4").addClass("border-warning");
+
+            }
+            if (day5Condition === "Clear" || day5Condition === "Clouds"){
+                
+                $(".border5").addClass("border-success");
+                console.log("success")}
+              else if (day5Condition === "Thunderstorm" || day5Condition === "Rain") {
+                console.log("red");
+                $(".border5").addClass("border-danger")}
+               else if (day5Condition === "Drizzle" || day5Condition === "Fog" || day5Condition ==="Snow"){
+                console.log("yellow");
+                $(".border5").addClass("border-warning");
+
+            }
+            if (day6Condition === "Clear" || day6Condition === "Clouds"){
+                
+                $(".border6").addClass("border-success");
+                console.log("success")}
+              else if (day6Condition === "Thunderstorm" || day6Condition === "Rain") {
+                console.log("red");
+                $(".border6").addClass("border-danger")}
+               else if (day6Condition === "Drizzle" || day6Condition === "Fog" || day6Condition ==="Snow"){
+                console.log("yellow");
+                $(".border6").addClass("border-warning");
+
+            }
+            if (day7Condition === "Clear" || day7Condition === "Clouds"){
+                
+                $(".border7").addClass("border-success");
+                console.log("success")}
+              else if (day7Condition === "Thunderstorm" || day7Condition === "Rain") {
+                console.log("red");
+                $(".border7").addClass("border-danger")}
+               else if (day7Condition === "Drizzle" || day7Condition === "Fog" || day7Condition ==="Snow"){
+                console.log("yellow");
+                $(".border7").addClass("border-warning");
+
+            }
 
             
 
