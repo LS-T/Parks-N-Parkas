@@ -4,7 +4,8 @@
 .navbar-light .navbar-brand {
     color: white;
     font-size: 50px;
-    margin: auto;
+    
+    
 }
 
 .row {
@@ -32,8 +33,4 @@
     display: flex;
 }
 
-.bannerImage {
-    margin-inline: -20px;
-   
-    
-}
+
