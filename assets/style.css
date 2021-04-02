@@ -1,6 +1,4 @@
-.root {
-    font-family: 'Roboto', sans-serif;
-}
+
 
 
 .navbar-light .navbar-brand {
@@ -32,4 +30,10 @@
 .saved-park {
     padding-left: 16px;
     display: flex;
+}
+
+.bannerImage {
+    margin-inline: -20px;
+   
+    
 }
