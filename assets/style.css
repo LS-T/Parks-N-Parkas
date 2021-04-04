@@ -1,12 +1,11 @@
-.root {
-    font-family: 'Roboto', sans-serif;
-}
+
 
 
 .navbar-light .navbar-brand {
     color: white;
     font-size: 50px;
-    margin: auto;
+    
+    
 }
 
 .row {
@@ -29,7 +28,13 @@
     display: flex;
 }
 
+.selectAParkEl {
+    padding-left: 3%;
+}
+
 .saved-park {
     padding-left: 16px;
     display: flex;
 }
+
+
