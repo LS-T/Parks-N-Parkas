@@ -12,22 +12,19 @@
     />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Parks-n-Parkas</title>
-    
 </head>
-
 <body>
+  <nav class="navbar navbar-light bg-dark">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="./assets/Original on Transparent.png" width="75" height="70" class="d-inline-block align-top" alt="">
+      Parks-n-Parkas
+    </a>
+  </nav>
+  <img class="bannerImage" src="./assets/Screen Shot 2021-04-02 at 9.59.27 AM.png" alt="custom_html_banner1" style="width:100%" >
 
 
-<nav class="navbar navbar-light bg-dark">
-  <a class="navbar-brand" href="#">
-    <img id="logo" src="/assets/Original on Transparent.png" width="75" height="70" class="d-inline-block align-top" alt="">
-    Parks-n-Parkas
-  </a>
-</nav>
 
-  <img class="bannerImage" src="/assets/Screen Shot 2021-04-02 at 9.59.27 AM.png" alt="custom_html_banner1" style="width:100%" >
-
-
+    <div class="col-sm-12">
     <main class="container-fluid">
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
@@ -35,26 +32,38 @@
               <div class="search-text">
               <h4> Search for a National Park :</h4>
             </div>
-
+            
               <div class="form-group col-9">
                 <input type="text" class="form-control" id="list-item" />
               </div>
 
-              <button type="submit" class="btn btn-primary col-2">Search</button>
+              <button onclick="liEl"  id="search-button" id="submit" class="btn btn-primary col-2">Search</button>
           </form>
 
           <div class="saved-park">
           <div class="card" style="width: 31rem">
-            <ul class="list-group list-group-flush" id="savedPark">
+            <ul class="list-group" id="savedPark">
+              <span id="search-results"></span>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div id='search-form'></div>
+              <div id="format-input"></div>
           </div>
         </div>
       </div>
-  
+<span id="park-name"></span>
+<div class="col-lg-9">
+  <div id="park" class="mt-3"></div>
+  <div id="forecast" class="row mt-3"></div>
+</div>
+
+          
 </body>
-<footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 
-
-</footer>
-<script src="assets/script.js"></script>
 </html>
+
+
