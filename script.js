@@ -86,6 +86,7 @@ function getFullName(latLong) {
         var liEl = $("<ul>");
         liEl.text(dataArray[i].name);
         $("#search-results").append(liEl);
+   
       }
     });
 }
