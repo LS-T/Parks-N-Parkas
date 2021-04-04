@@ -36,6 +36,42 @@ function getWeatherApi() {
           moment.unix(data.daily[i].dt).format("MM" + "/" + "D" + "/" + "YYYY")
         );
       }
+
+      var dayCondition = {
+        condition: [
+          data.daily[0].weather[0].main,
+          data.daily[1].weather[0].main,
+          data.daily[2].weather[0].main,
+          data.daily[3].weather[0].main,
+          data.daily[4].weather[0].main,
+          data.daily[5].weather[0].main,
+          data.daily[6].weather[0].main,
+          data.daily[7].weather[0].main,
+        ],
+      };
+
+      for (var i = 0; i < dayCondition.condition.length; i++) {
+        if (
+          dayCondition.condition[i] === "Clear" ||
+          dayCondition.condition[i] === "Clouds"
+        ) {
+          console.log("yes");
+          $(`.border${i}`).addClass("border-success");
+        } else if (
+          dayCondition.condition[i] === "Thunderstorm" ||
+          dayCondition.condition[i] === "Rain"
+        ) {
+          console.log("else if");
+          $(`.border${i}`).addClass("border-danger");
+        } else if (
+          dayCondition.condition[i] === "Drizzle" ||
+          dayCondition.condition[i] === "Fog" ||
+          dayCondition.condition[i] === "Snow"
+        ) {
+          console.log("warning");
+          $(`.border${i}`).addClass("border-warning");
+        }
+      }
     });
 }
 
