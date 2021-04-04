@@ -1,6 +1,14 @@
 
 
 
+h2 {
+    font-family: 'Anton', sans-serif;
+    background-color: #dcddd2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
 .navbar-light .navbar-brand {
     color: white;
     font-size: 50px;
@@ -12,15 +20,20 @@
     margin: auto;
 }
 
-.btn {
-    background-color: seagreen;
-    border-color: seagreen;
-    display: flex;
 
-    margin-bottom: 15px;
-    justify-content: center;
-    
+button#submit {
+    background-color: seagreen;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+    width: 80px;
+    margin-top: 20px;
+    margin-left: -15px;
+    font-weight: bold;
+    display: block;
 }
+
 
 .search-text {
     padding-left: 3%;
@@ -37,4 +50,7 @@
     display: flex;
 }
 
+.list-item {
+    justify-content: left;
+}
 
