@@ -11,22 +11,85 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <link
+    rel="stylesheet"
+    href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <link rel="stylesheet" href="assets/reset.css"/>
     <link rel="stylesheet" href="assets/style.css"/>
     <link rel="stylesheet" href="assets/style2.css"/>
   </head>
   <body>
-    <!-- jumbotron -->
-    <nav class="jumbotron" id="jumbotron-bg">
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar-brand" href="#">
+        <img id="logo" src="./assets/Original on Transparent.png" width="75" height="70" class="d-inline-block align-top" alt="">
+        Park Info
+      </a>
+    </nav>
+    <img class="bannerImage" src="./assets/images/navbar-bg.jpg" alt="custom_html_banner1" style="width:100%" >
+
+    <!-- <nav class="jumbotron" id="jumbotron-bg">
       <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img id="logo" src="./assets/Original on Transparent.png" width="75" height="70" class="d-inline-block align-top" alt="">
+          Parks-n-Parkas
+        </a>
         <h1>Park Results</h1>
       </div>
-    </nav>
+    </nav> -->
+
+    <body>
+      <!-- <h1>Park Info</h1> -->
+      <div id="accordion">
+        <h3>Park Name Placeholder </h3>
+        <div>
+          <p>
+        park photo placeholder 
+          </p>
+        </div>
+        <h3>Park Description Placeholder</h3>
+        <div>
+          <p>
+            Park Description Placeholder
+          </p>
+        </div>
+        <h3>Amenities Placeholder </h3>
+        <div>
+          <p>
+          amenities placeholder 
+          </p>
+        </div>
+        <h3>Things to do placeholder </h3>
+        <div>
+          <p>
+          Things to do placeholder 
+          </p>
+        </div>
+      </div>
 
     <div class="search-results">
       <div class="row"></div>
       <div class="row" id="searchResults">
-    </div>    
+    </div>  
+    
+    <!-- <aside class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+            <form class="row" id="add-to-list">
+              <div class="search-text">
+              <h4> Search for a National Park :</h4>
+            </div>
+
+            <div class="form-group col-9">
+              <input type="text" class="form-control" id="list-item" />
+            </div>
+
+            <button type="submit" class="btn btn-primary col-2">Search</button>
+    </aside> -->
 
 
         
@@ -42,7 +105,17 @@
           </li>
         </ul>
       </div>
-    </div>  
-    
+     </div>   
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <script>
+       $(function () {
+         $("#accordion").accordion({
+           collapsible: true,
+         });
+       });
+     </script>
+     <script src="./parkinfo.js"></script>
+    <script src="assets/script2.js"></script>
   </body>
 </html>
