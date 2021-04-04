@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -22,26 +24,41 @@
   </nav>
   <img class="bannerImage" src="./assets/Screen Shot 2021-04-02 at 9.59.27 AM.png" alt="custom_html_banner1" style="width:100%" >
 
-
-
+    
+    <h2 class="d-flex justify-content-center"> Plan and enrich your National Park experience, rain or shine.</h2>
     <div class="col-sm-12">
     <main class="container-fluid">
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
+
+
+
+
             <form class="row" id="add-to-list">
+              
               <div class="search-text">
-              <h4> Search by State :</h4>
+              <h3> Search by State :</h3>
+              
             </div>
             
               <div class="form-group col-9">
-                <input type="text" class="form-control" id="list-item" />
+                <fieldset id="fieldset" type="text" class="search-text">
+                    <select class="col-sm-9 offset-sm-2 display-flex" id="list-item" name="state"><option value="---">---</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Guam">Guam</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select>
+                  </label>
+                </fieldset>
+                
               </div>
 
-              <button id="search-button" id="submit" class="btn btn-primary col-2">Search</button>
+              <button id="submit">Search</button>
           </form>
 
+
+
+
+
+
           <div class="selectAParkEl">
-          <h5>Select a Park :</h5>
+          <h4>Select a National Park :</h4>
          
 
           <div class="saved-park">
@@ -62,8 +79,11 @@
   <div id="park" class="mt-3"></div>
   <div id="forecast" class="row mt-3"></div>
 </div>
-
-          
+<br></br>
+<br></br>
+<footer class="d-flex justify-content-center">
+  <h6>Copyright &copy; 2021 Parks-n-Parkas</h6>
+</footer>        
 </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="script.js"></script>
