@@ -28,7 +28,7 @@ function getFullName(latLong) {
       let liEl = $("<ul>");
       liEl.css("list-style", "none");
       for (var i = 0; i < dataArray.length; i++) {
-        let liButton = '<li><a href="#">' + dataArray[i].name +'</a?></li>';
+        let liButton = '<li><a href="#">' + dataArray[i].name +'</a></li>';
         liEl.append(liButton);
       }
 
