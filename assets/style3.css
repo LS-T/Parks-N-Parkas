@@ -8,13 +8,17 @@ h1 {
   text-align: center;
 }
 
-.hide{
-    display:none;
+.hide {
+  display: none;
 }
-.show{
-    display: contents;
+.show {
+  display: contents;
 }
-.parkCard{
-    position: absolute;
-    margin-top: 50px;
+.parkCard {
+  position: absolute;
+  margin-top: 50px;
+}
+.navbar-light .navbar-brand {
+  color: white;
+  font-size: 50px;
 }
