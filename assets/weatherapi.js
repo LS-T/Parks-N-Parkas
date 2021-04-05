@@ -2,6 +2,7 @@
 var lat =JSON.parse(localStorage.getItem("lat"));
 var long =JSON.parse(localStorage.getItem("long"));
 var parkCode = JSON.parse(localStorage.getItem("parkCode"));
+console.log(parkCode);
 apiKey = "1ebd3e88b4147deeadc030e6248c294d";
 apiKey1 = "tUYx242tVWHR8g0DjM5M1TcEs3h2FPccJc8wAfmJ";
 
@@ -75,14 +76,14 @@ function getWeatherApi() {
 }
 function npsData() {
   var requestURL2 =
-    "https://developer.nps.gov/api/v1/tours?campgrounds=" + parkCode + "&limit=3&start=0&api_key=" + apiKey1;
+    "https://developer.nps.gov/api/v1/campgrounds?" +"parkCode=" + parkCode + "&limit=3&start=0&api_key=" + apiKey1;
   fetch(requestURL2)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      $("#parkCardHeader").text(data.data[0].park.fullName);
+      $("#parkCardHeader").text(data.data[0].name);
       $("#parkCardTitle").text(data.data[0].title);
       $("#parkCardInfo").text(data.data[0].description);
 
@@ -91,61 +92,39 @@ function npsData() {
       var tourCard = `
       <section class="container" id="tourInfo">
       <div class="card">
-          <h5 class="card-header text-center">${data.data[0].park.fullName}</h5>
+          <h5 class="card-header text-center">${data.data[0].name}</h5>
           <div class="card-body text-center">
-            <h5 class="card-title">${data.data[0].title}</h5>
+            <h5 class="card-title"></h5>
             <div>
                   <p class="card-text col-6 float-left mt-5">${data.data[0].description}</p>
                   <table class="table table-dark col-6 float-right">
                       <thead>
                         <tr>
-                          <th scope="col">Tour Stops</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Significance</th>
+                          <th scope="col">Availability</th>
+                          <th scope="col">Firewood</th>
+                          <th scope="col">Camp store</th>
+                          <th scope="col">Ice</th>
+                          <th scope="col">Fees</th>
+                          <th scope="col">Sites</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>${data.data[0].stops[0].assetName}</td>
-                          <td>${data.data[0].stops[0].significance}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>${data.data[0].stops[1].assetName}</td>
-                          <td>${data.data[0].stops[1].assetName}</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>${data.data[0].stops[2].assetName}</td>
-                          <td>${data.data[0].stops[2].significance}</td>
+                          <th scope="row">Available</th>
+                          <td>${data.data[0].amenities.firewoodForSale}</td>
+                          <td>${data.data[0].amenities.campStore}</td>
+                          <td>${data.data[0].amenities.iceAvailableForSale}</td>
+                          <td>${data.data[0].fees[0].cost}</td>
+                          <td>${data.data[0].campsites.totalSites}</td>
+
                         </tr>
                       </tbody>
                     </table>
                     
             </div>
-            <a href="https://www.nps.gov/acad/index.htm" class="btn btn-primary mb-2">Learn More</a>
+            <a href="${data.data[0].directionsUrl}" class="btn btn-primary mb-2">Learn More</a>
             <div class="col-6 align-items-center">
-                <table class="table table-dark col-12 float-left">
-                          <thead>
-                            <tr>
-                              <th scope="col">Activities</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-
-                              <td>${data.data[0].activities[0].name}</td>
-                            </tr>
-                            <tr>
-                              <td>${data.data[0].activities[1].name}</td>
-
-                            </tr>
-                            <tr>
-                              <td>${data.data[0].activities[2].name}</td>
-                            </tr>
-                          </tbody>
-                        </table>
               </div>
           
          </div>
