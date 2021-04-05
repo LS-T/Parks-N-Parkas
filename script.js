@@ -28,17 +28,46 @@ function getFullName(latLong) {
       let liEl = $("<ul>");
       liEl.css("list-style", "none");
       for (var i = 0; i < dataArray.length; i++) {
-        let liButton = '<li><a href="#">' + dataArray[i].name +'</a></li>';
-        liEl.append(liButton);
-      }
-
-        // var liEl = $("<li>");
-        // liEl.text(dataArray[i].name);
+        var listDiv = $("<div class='card mb-2' id='cardList'></div>");
+        liEl.append(listDiv);
+        var liButton = `<li id="parkId${i}"><a class="name"  href="./landingpage3.html">${dataArray[i].fullName}</a></li>`;
+        listDiv.append(liButton);
+        // Set attributes to each parkId generated for use in local storage
+        $(`#parkId${i}`).attr("condition", dataArray[i].parkCode);
+        $(`#parkId${i}`).attr("lat", dataArray[i].latitude);
+        $(`#parkId${i}`).attr("long", dataArray[i].longitude);
         $("#search-results").append(liEl);
+        
+      };
+      console.log(dataArray[0].parkCode);
+
+      var value = $(".name2").text();
+      console.log(value);
+
+
+      // On click of search options store parkCode, lat, long
+      $(".name").on("click", function (){
+        console.log("yes");
+        console.log($(this).parent().attr("condition"));
+        console.log($(this).text());
+        localStorage.setItem("parkCode",JSON.stringify($(this).parent().attr("condition")));
+        localStorage.setItem("lat",JSON.stringify($(this).parent().attr("lat")));
+        localStorage.setItem("long",JSON.stringify($(this).parent().attr("long")));
+        
+
+      })
+        
+
+       
       
     });
 }
 
+
+
+$("#parkId").on("click",function(){
+  console.log("yes")
+})
 
 
 $("#bfCaptchaEntry").on("click", function(){ myFunction(); });
@@ -46,6 +75,7 @@ $("#add-to-list").on("submit", function (event) {
   event.preventDefault();
   console.log("You submitted the form");
   var parkToSearch = $("#list-item").val();
+  console.log(parkToSearch);
   getFullName(parkToSearch);
 });
 

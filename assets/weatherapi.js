@@ -1,10 +1,8 @@
-console.log("Hello world!");
+// Pull from local storage and set to variable for use in functions below 
+var lat =JSON.parse(localStorage.getItem("lat"));
+var long =JSON.parse(localStorage.getItem("long"));
+var parkCode = JSON.parse(localStorage.getItem("parkCode"));
 apiKey = "1ebd3e88b4147deeadc030e6248c294d";
-var city = "Atlanta";
-var lat = 33.7;
-var lon = -84.3;
-var temp = $("#temp");
-var humid = $("#humid");
 apiKey1 = "tUYx242tVWHR8g0DjM5M1TcEs3h2FPccJc8wAfmJ";
 
 function getWeatherApi() {
@@ -12,7 +10,7 @@ function getWeatherApi() {
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
     lat +
     "&lon=" +
-    lon +
+    long +
     "&exclude=minutely,hourly&units=imperial&appid=" +
     apiKey;
 
@@ -77,7 +75,7 @@ function getWeatherApi() {
 }
 function npsData() {
   var requestURL2 =
-    "https://developer.nps.gov/api/v1/tours?parkCode=acad&api_key=" + apiKey1;
+    "https://developer.nps.gov/api/v1/tours?campgrounds=" + parkCode + "&limit=3&start=0&api_key=" + apiKey1;
   fetch(requestURL2)
     .then(function (response) {
       return response.json();
@@ -144,7 +142,7 @@ function npsData() {
 
                             </tr>
                             <tr>
-                              <td>${data.data[0].activities[1].name}</td>
+                              <td>${data.data[0].activities[2].name}</td>
                             </tr>
                           </tbody>
                         </table>
