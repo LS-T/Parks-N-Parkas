@@ -5,6 +5,7 @@ var lat = 33.7;
 var lon = -84.3;
 var temp = $("#temp");
 var humid = $("#humid");
+apiKey1 = "tUYx242tVWHR8g0DjM5M1TcEs3h2FPccJc8wAfmJ";
 
 function getWeatherApi() {
   var requestURL =
@@ -74,5 +75,103 @@ function getWeatherApi() {
       }
     });
 }
+function npsData() {
+  var requestURL2 =
+    "https://developer.nps.gov/api/v1/tours?parkCode=acad&api_key=" + apiKey1;
+  fetch(requestURL2)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      $("#parkCardHeader").text(data.data[0].park.fullName);
+      $("#parkCardTitle").text(data.data[0].title);
+      $("#parkCardInfo").text(data.data[0].description);
 
+
+
+      var tourCard = `
+      <section class="container" id="tourInfo">
+      <div class="card">
+          <h5 class="card-header text-center">${data.data[0].park.fullName}</h5>
+          <div class="card-body text-center">
+            <h5 class="card-title">${data.data[0].title}</h5>
+            <div>
+                  <p class="card-text col-6 float-left mt-5">${data.data[0].description}</p>
+                  <table class="table table-dark col-6 float-right">
+                      <thead>
+                        <tr>
+                          <th scope="col">Tour Stops</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Significance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>${data.data[0].stops[0].assetName}</td>
+                          <td>${data.data[0].stops[0].significance}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>${data.data[0].stops[1].assetName}</td>
+                          <td>${data.data[0].stops[1].assetName}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>${data.data[0].stops[2].assetName}</td>
+                          <td>${data.data[0].stops[2].significance}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+            </div>
+            <a href="https://www.nps.gov/acad/index.htm" class="btn btn-primary mb-2">Learn More</a>
+            <div class="col-6 align-items-center">
+                <table class="table table-dark col-12 float-left">
+                          <thead>
+                            <tr>
+                              <th scope="col">Activities</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+
+                              <td>${data.data[0].activities[0].name}</td>
+                            </tr>
+                            <tr>
+                              <td>${data.data[0].activities[1].name}</td>
+
+                            </tr>
+                            <tr>
+                              <td>${data.data[0].activities[1].name}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+              </div>
+          
+         </div>
+        </div>
+  </section>
+      
+      `;
+      document.querySelector("#weatherCards").innerHTML += tourCard
+    });
+}
+
+$(".card").on("click", function () {
+  console.log($(this).attr("condition"));
+  
+
+  if (
+    $(this).attr("condition") === "Clouds" ||
+    $(this).attr("condition") === "Clear"
+  ) {
+    $("#weatherCards").empty();
+    npsData();
+    
+    
+   
+  }
+});
 getWeatherApi();
