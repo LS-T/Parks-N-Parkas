@@ -7,4 +7,4 @@ Parks-N-Parkas is an interactive app allowing park enthusiast users to search fo
 [Link] https://ls-t.github.io/Parks-N-Parkas/
 
 ## Screenshot of Live App 
-[Screenshot] assets\screenshot for PNP.PNG
+[Screenshot] assets\screenshot for parks and parkas.png

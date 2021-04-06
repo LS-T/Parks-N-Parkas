@@ -38,3 +38,4 @@ function getFullName(latLong) {
       }
     });
 }
+g
