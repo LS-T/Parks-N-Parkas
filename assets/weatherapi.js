@@ -2,10 +2,10 @@
 var lat =JSON.parse(localStorage.getItem("lat"));
 var long =JSON.parse(localStorage.getItem("long"));
 var parkCode = JSON.parse(localStorage.getItem("parkCode"));
-console.log(parkCode);
-apiKey = "1ebd3e88b4147deeadc030e6248c294d";
-apiKey1 = "tUYx242tVWHR8g0DjM5M1TcEs3h2FPccJc8wAfmJ";
+var apiKey = "1ebd3e88b4147deeadc030e6248c294d";
+var apiKey1 = "tUYx242tVWHR8g0DjM5M1TcEs3h2FPccJc8wAfmJ";
 
+// Function for requesting data from weather api
 function getWeatherApi() {
   var requestURL =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -22,6 +22,7 @@ function getWeatherApi() {
     .then(function (data) {
       console.log(data);
 
+      // For loop to loop through data.daily from the api and for each one manipulate DOM using jQuery template literals
       for (var i = 0; i < data.daily.length; i++) {
         console.log(data.daily[i]);
         var iconUrl = `http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png`;
@@ -36,7 +37,8 @@ function getWeatherApi() {
           moment.unix(data.daily[i].dt).format("MM" + "/" + "D" + "/" + "YYYY")
         );
       }
-
+    
+      // Created an array inside of an object to store the condition of each day in the forecast 
       var dayCondition = {
         condition: [
           data.daily[0].weather[0].main,
@@ -50,6 +52,8 @@ function getWeatherApi() {
         ],
       };
 
+
+      // For loop to run through the object dayCondition and manipulate the dom using jQuery based on if conditional
       for (var i = 0; i < dayCondition.condition.length; i++) {
         if (
           dayCondition.condition[i] === "Clear" ||
@@ -74,6 +78,9 @@ function getWeatherApi() {
       }
     });
 }
+
+
+// Fetch request made for the nps api
 function npsData() {
   var requestURL2 =
     "https://developer.nps.gov/api/v1/campgrounds?" +"parkCode=" + parkCode + "&limit=3&start=0&api_key=" + apiKey1;
@@ -89,6 +96,7 @@ function npsData() {
 
 
 
+      // Created HTML dynamically using a template literal and utilized jQuery to dynamically manipulate DOM
       var tourCard = `
       <section class="container" id="tourInfo">
       <div class="card">
@@ -136,10 +144,12 @@ function npsData() {
     });
 }
 
+// On click of one of the cards, grab the attribute of the card selected. 
 $(".card").on("click", function () {
   console.log($(this).attr("condition"));
   
 
+  // if conditional that takes the attribute of clicked card (this) and if it is "clouds" or "clear", empty container and run npsData function 
   if (
     $(this).attr("condition") === "Clouds" ||
     $(this).attr("condition") === "Clear"
