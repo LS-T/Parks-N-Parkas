@@ -8,3 +8,10 @@ Parks-N-Parkas is an interactive app allowing park enthusiast users to search fo
 
 ## Screenshot of Live App 
 [Screenshot] https://github.com/LS-T/Parks-N-Parkas/blob/6dd80170a80ed2d839ffc996398253ad76297647/pnpphoto.png
+
+## Contact Information
+leo.s.teruel@gmail.com
+tsopee@gmail.com
+https://emilyjwilbur.github.io/updated-portfolio/
+https://jagatston.github.io/Updated-Portfolio/
+
